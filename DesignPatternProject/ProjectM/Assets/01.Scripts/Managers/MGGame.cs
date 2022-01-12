@@ -56,6 +56,8 @@ public class MGGame : MonoBehaviour
         heroConList.Clear();
 
         curCastleHp = maxCastleHp;
+
+        SpawnArcher();
     }
 
     void OnEnable()
@@ -79,16 +81,6 @@ public class MGGame : MonoBehaviour
                 heroConList.RemoveAt(heroConList.Count - 1);
             }
 
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnArcher();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SpawnEnemy();
         }
 
     }
@@ -139,6 +131,7 @@ public class MGGame : MonoBehaviour
         }
         StartCoroutine(SpawnEnemyCor());
 
+        curCastleHp = maxCastleHp;
     }
 
     public void StageEnd()
